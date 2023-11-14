@@ -12,43 +12,6 @@ namespace Week7_FileJsonSerialise_Due14Nov.UI
         public static string Buffer { get; set; } = string.Empty;
 
 
-
-        public static int ExecActionWhileHandlingError(Func<string,int> action,string msg)
-        {
-            bool failed = false;
-            do
-            {
-                try
-                {
-                    return action.Invoke(msg);
-                    failed = false;
-                }
-                catch (Exception e)
-                {
-                    BufferError(e.Message);
-                    failed = true;
-                }
-            } while (failed);
-            return -1;
-        }
-        public static void ExecWhileHandlingError(Action action)
-        {
-            bool failed = false;
-            do
-            {
-                try
-                {
-                    action.Invoke();
-                    failed = false;
-                }
-                catch (Exception e)
-                {
-                    BufferError(e.Message);
-                    failed = true;
-                }
-            } while (failed);
-        }
-
         /// <summary>
         /// Prints buffer to the console. Handles coloring (warning, error)
         /// </summary>
