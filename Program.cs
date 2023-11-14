@@ -1,7 +1,9 @@
 ﻿using Week7_FileJsonSerialise_Due14Nov;
+using Week7_FileJsonSerialise_Due14Nov.Extentions;
 using Week7_FileJsonSerialise_Due14Nov.Interfaces;
 
-var DataFolderPath = "C:/Users/vuqar/Desktop/Data";
+//var DataFolderPath = "C:/Users/vuqar/Desktop/Data";
+var DataFolderPath = Environment.ExpandEnvironmentVariables("%UserProfile%/Desktop/Data");
 
 
 Directory.CreateDirectory(DataFolderPath);
@@ -17,19 +19,24 @@ var student1 = new Student("Vugar","Surname","AZ001");
 var student2 = new Student("Ahmad","Ahmadov","AZ002");
 var student3 = new Student("Bill","Clinton","US004");
 
-Console.ReadKey();
+// Console.ReadKey();
 await studentCollection.AddAsync(student1);
 
-Console.ReadKey();
+// Console.ReadKey();
 await studentCollection.AddAsync(student2);
 await studentCollection.AddAsync(student3);
 
-Console.ReadKey();
+// Console.ReadKey();
 await studentCollection.RemoveAsync(student1);
 
-Console.ReadKey();
+// Console.ReadKey();
 await studentCollection.SetAsync(0, new("Saddam", "Huseyin", "IRQ001"));
 
-Console.ReadKey();
+// Console.ReadKey();
 await studentCollection.UpdateStudentByCode("US004", new("Bill", "Huseyin", "USQ005"));
+
+Console.ReadKey();
+var users = await studentCollection.FetchAndGetItemsAsync();
+users.Dump();
+users.Add(new("ss","ss","ss"));
 

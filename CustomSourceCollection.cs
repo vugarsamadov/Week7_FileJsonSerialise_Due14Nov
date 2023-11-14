@@ -44,26 +44,43 @@ namespace Week7_FileJsonSerialise_Due14Nov
             await SaveChangesAsync();
         }
 
-
+        /// <summary>
+        /// Stores changes to source
+        /// </summary>
+        /// <returns></returns>
         public async Task SaveChangesAsync()
         {
             await Source.StoreAsync(_items);
         }
 
+        /// <summary>
+        /// Fetches the source and updates _items
+        /// </summary>
+        /// <returns></returns>
         public async Task EnsureSyncWithSource()
         {
             _items = await Source.FetchAsync();
         }
 
+        /// <summary>
+        /// Clears and updates Source
+        /// </summary>
+        /// <returns></returns>
         public async Task ClearAsync()
         {
-            await EnsureSyncWithSource();
+            //await EnsureSyncWithSource();
             _items.Clear();
             await SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Adds and updates Source
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task AddAsync(T item)
         {
+            if (item == null) return;
             await EnsureSyncWithSource();
             _items.Add(item);
             await SaveChangesAsync();
@@ -74,13 +91,28 @@ namespace Week7_FileJsonSerialise_Due14Nov
             throw new NotImplementedException();
         }
 
-        public async Task RemoveAsync(T item)
+        /// <summary>
+        /// Removes element and updates Source
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public async Task<bool> RemoveAsync(T item)
         {
             await EnsureSyncWithSource();
-            _items.Remove(item);
-            await SaveChangesAsync();
+            var result = _items.Remove(item);
+
+            if(result)
+                await SaveChangesAsync();
+            
+            return result;
         }
 
+        /// <summary>
+        /// Finds the element that passes given predicate
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns> Index of element that matches the predicate</returns>
+        /// <exception cref="Exception">If more than one element passes predicate throws exception</exception>
         public async Task<int> MySingleOrDefaultAsync(Predicate<T> p)
         {
             await EnsureSyncWithSource();
@@ -97,6 +129,12 @@ namespace Week7_FileJsonSerialise_Due14Nov
                 }
             }
             return indx;
+        }
+
+        public async Task<IList<T>> FetchAndGetItemsAsync()
+        {
+            await EnsureSyncWithSource();
+            return Items;
         }
 
     }

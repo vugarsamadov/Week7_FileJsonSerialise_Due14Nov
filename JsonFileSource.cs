@@ -20,7 +20,10 @@ namespace Week7_FileJsonSerialise_Due14Nov
         {
             FilePath = filePath;
         }
-
+        /// <summary>
+        /// Fetch from file and return the collection
+        /// </summary>
+        /// <returns></returns>
         public async Task<IList<T>> FetchAsync()
         {
             using StreamReader sr = new(FilePath);
@@ -28,7 +31,11 @@ namespace Week7_FileJsonSerialise_Due14Nov
             var collection = JsonConvert.DeserializeObject<IList<T>>(jsonStr);
             return collection == null ? new List<T>() : collection;
         }
-
+        /// <summary>
+        /// Serializes the object and saves to the file
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
         public async Task StoreAsync(IList<T> items)
         {
             var jsonStr = JsonConvert.SerializeObject(items);
