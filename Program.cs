@@ -18,15 +18,6 @@ if(!File.Exists(filepath))
 ICustomCollectionFileBasedSource<Student> fileSource = new JsonFileSource<Student>(filepath);
 StudentCollection studentCollection = new(fileSource);
 
-//var student1 = new Student("Vugar","Surname","AZ001");
-//var student2 = new Student("Ahmad","Ahmadov","AZ002");
-//var student3 = new Student("Bill","Clinton","US004");
-
-//await studentCollection.AddAsync(student1);
-//await studentCollection.AddAsync(student2);
-//await studentCollection.AddAsync(student3);
-
-
 var commands = new string[] {"Show All","Add Student","Update Student","Remove Student","Quit"};
 
 int command;
@@ -60,7 +51,7 @@ do
         ConsoleHelpers.BufferError(e.Message);
     }
 
-} while (command != 3);
+} while (command != commands.Count() - 1);
 
 
 
