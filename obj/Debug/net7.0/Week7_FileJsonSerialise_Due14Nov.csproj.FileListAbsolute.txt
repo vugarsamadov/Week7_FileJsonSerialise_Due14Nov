@@ -1,0 +1,17 @@
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\bin\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.exe
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\bin\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.deps.json
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\bin\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.runtimeconfig.json
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\bin\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.dll
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\bin\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.pdb
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.csproj.AssemblyReference.cache
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.AssemblyInfoInputs.cache
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.AssemblyInfo.cs
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.csproj.CoreCompileInputs.cache
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.csproj.CopyComplete
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.dll
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\refint\Week7_FileJsonSerialise_Due14Nov.dll
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.pdb
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\Week7_FileJsonSerialise_Due14Nov.genruntimeconfig.cache
+C:\Users\vuqar\Desktop\Code\Tasklar\Week7_FileJsonSerialise_Due14Nov\obj\Debug\net7.0\ref\Week7_FileJsonSerialise_Due14Nov.dll
