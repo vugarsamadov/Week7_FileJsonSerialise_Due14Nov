@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +12,22 @@ namespace Week7_FileJsonSerialise_Due14Nov
     {
         public StudentCollection(ICustomCollectionSource<Student> source) : base(source) { }
 
+        public override async Task AddAsync(Student item)
+        {
+            if (await AnyAsync(s => s.Code == item.Code))
+                throw new Exception("Student with code already present!");
+            await base.AddAsync(item);
+        }
+
         public async Task RemoveStudentByCode(string code)
         {
-            var studentIndx = await MySingleOrDefaultAsync(s => s.Code == code);
+            var studentIndx = await MySingleOrExceptionAsync(s => s.Code == code);
             await RemoveAsync(Items[studentIndx]);
         }
     
-        public async Task UpdateStudentByCode(string code, Student newStudent)
+        public async Task UpdateStudentByCodeAsync(string code, Student newStudent)
         {
-            var oldStudentIndx = await MySingleOrDefaultAsync(s => s.Code == code);
+            var oldStudentIndx = await MySingleOrExceptionAsync(s => s.Code == code);
             await SetAsync(oldStudentIndx, newStudent);
         }
 

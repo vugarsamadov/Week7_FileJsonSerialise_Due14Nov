@@ -78,7 +78,7 @@ namespace Week7_FileJsonSerialise_Due14Nov
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public async Task AddAsync(T item)
+        public virtual async Task AddAsync(T item)
         {
             if (item == null) return;
             await EnsureSyncWithSource();
@@ -113,7 +113,7 @@ namespace Week7_FileJsonSerialise_Due14Nov
         /// <param name="p"></param>
         /// <returns> Index of element that matches the predicate</returns>
         /// <exception cref="Exception">If more than one element passes predicate throws exception</exception>
-        public async Task<int> MySingleOrDefaultAsync(Predicate<T> p)
+        public async Task<int> MySingleOrExceptionAsync(Predicate<T> p)
         {
             await EnsureSyncWithSource();
 
@@ -126,12 +126,28 @@ namespace Week7_FileJsonSerialise_Due14Nov
                     if(found)
                         throw new Exception("Multiple items with ");
                     indx = i;
+                    found = true;
                 }
             }
+            if (!found)
+                throw new Exception("Item with specified predicate is not found!");
             return indx;
         }
 
-        public async Task<IList<T>> FetchAndGetItemsAsync()
+        public async Task<bool> AnyAsync(Predicate<T> p)
+        {
+            await EnsureSyncWithSource();
+            for (int i = 0; i < Items.Count; i++)
+            {
+                if (p(_items[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public async Task<ReadOnlyCollection<T>> FetchAndGetItemsAsync()
         {
             await EnsureSyncWithSource();
             return Items;
